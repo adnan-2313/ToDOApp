@@ -13,7 +13,7 @@ const App1 = ()=>{
     }
     const listnewItems = ()=>{
         if(item.trim()){
-            if(list.length <=8){
+            if(list.length <8){
                 setList((prevValue)=>{
                     return [...prevValue,item]
                 });
