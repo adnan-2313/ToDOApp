@@ -9,18 +9,22 @@ const  App =()=> {
     setList(event.target.value);
   }
   const listOfItems = ()=>{
-    setItems((oldItems)=>{
-      return [...oldItems,list];
-    })
-    setList("");
+    if (list && list.trim()) {
+      if (items.length < 9) setItems((oldItems) => {
+        return [...oldItems, list];
+      });
+      setList("");
+    }
 
   }
-  const deleteitems=(id)=>{
+  const deleteitems=(id)=>
+  {
     setItems((oldItems)=>{
       return oldItems.filter((ele,i)=>{
           return i !==id;
       })
     })
+    
   }
   return (
     <>
